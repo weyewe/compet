@@ -1,0 +1,13 @@
+<article ng-repeat="material in competenceMaterials"  ng-class="{active: material.selected}" 
+	class="well summary"
+	ng-click="selectMaterial(material)">
+  <div class="row-fluid">
+    <div class="span6 pub-name">
+      {{material.source}}
+    </div>
+    <div class="span6 pub-date">
+      {{material.posted_at}}
+    </div>
+  </div>
+  <h3 class="pub-title">{{material.title}}</h3>
+</article>

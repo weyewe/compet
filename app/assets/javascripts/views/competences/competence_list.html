@@ -1,0 +1,13 @@
+<article ng-repeat="competence in competences.all"  ng-class="{active: competence.selected}" 
+	class="well summary"
+	ng-click="selectObjectByIndex($index)">
+  <div class="row-fluid">
+    <div class="span6 pub-name">
+      {{competence.source}}
+    </div>
+    <div class="span6 pub-date">
+      {{competence.posted_at}}
+    </div>
+  </div>
+  <h3 class="pub-title">{{competence.title}}</h3>
+</article>

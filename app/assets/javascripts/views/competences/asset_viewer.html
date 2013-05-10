@@ -1,0 +1,37 @@
+	<article class="well entry" ng-class="{read: selectedMaterial, active: selectedMaterial}" 
+			ng-show="selectedMaterial" style="display: block;">
+			<h2>{{selectedMaterial.title }}</h2>
+			<hr />
+ 
+
+		<div ng-switch on="materialType(selectedMaterial)" >
+			<!-- if it is microsoft document -->
+			<iframe ng-switch-when="ms" 
+				src="https://view.officeapps.live.com/op/view.aspx?src={{selectedMaterial.storage_url }}"
+				style='width:100%; height:100%' frameborder='0'>
+			</iframe>
+			
+			
+			<!-- if it is image document -->
+			<img ng-switch-when="img"
+				ng-src="{{selectedMaterial.storage_url }}"/>
+			
+			
+			
+			
+			<!-- if it is the rest: google docs etc -->
+			<iframe ng-switch-default
+				src="http://docs.google.com/gview?url={{urlEncode( selectedMaterial.storage_url ) }}&embedded=true"
+			 	style="width:100%; height:100%;" frameborder="0">
+			</iframe>
+			
+		</div>
+
+
+		
+		
+		
+		
+		
+  </article> 
+
